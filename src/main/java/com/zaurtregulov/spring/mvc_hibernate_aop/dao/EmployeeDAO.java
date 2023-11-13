@@ -9,4 +9,5 @@ public interface EmployeeDAO {
 
     public void saveEmployee(Employee e);
     public Employee getEmployeeById(int id);
+    public void deleteEmp(int id);
 }

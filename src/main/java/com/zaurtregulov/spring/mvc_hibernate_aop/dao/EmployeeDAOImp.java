@@ -35,4 +35,11 @@ public class EmployeeDAOImp implements EmployeeDAO {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Employee.class,id);
     }
+
+    @Override
+    public void deleteEmp(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Employee e = session.get(Employee.class,id);
+        session.remove(e);
+    }
 }

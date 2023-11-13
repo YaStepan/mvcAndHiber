@@ -49,5 +49,12 @@ public class MyController {
         // т.к. возвращаем то же самое представление
         return "employee-info";
     }
+    @RequestMapping("/deleteEmp")
+    public String deleteEmployee(@RequestParam("empId") int id, Model model){
+        empService.removeEmp(id);
+        List<Employee> allEmployees = empService.getAllEmployees();
+        model.addAttribute("allEmps", allEmployees);
+        return "all-employees";
+    }
 
 }

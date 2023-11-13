@@ -21,13 +21,20 @@
         <c:url var="updateButton" value="/updateInfo">
             <c:param name="empId" value="${emp.id}"/>
         </c:url>
+        <c:url var="delete" value="/deleteEmp">
+            <c:param name="empId" value="${emp.id}"/>
+        </c:url>
         <tr>
             <td>${emp.name}</td>
             <td>${emp.surname}</td>
             <td>${emp.department}</td>
             <td>${emp.salary}</td>
             <td><input type="button" value="update"
-                       onclick="window.location.href='${updateButton}'"></td>
+                       onclick="window.location.href='${updateButton}'">
+                <input type="button" value="delete"
+                       onclick="window.location.href='${delete}'">
+            </td>
+
         </tr>
     </c:forEach>
 </table>
